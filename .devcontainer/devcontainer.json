@@ -1,0 +1,104 @@
+{
+    "name": "Website",
+    "image": "mcr.microsoft.com/devcontainers/typescript-node:0-18",
+    "forwardPorts": [
+      3000
+    ],
+    "portsAttributes": {
+      "3000": {
+        "label": "Website"
+      }
+    },
+    "postCreateCommand": "./.devcontainer/postCreateCommand.sh",
+    "customizations": {
+      "vscode": {
+        "settings": {
+          // Font
+          "editor.fontFamily": "Fira Code",
+          "editor.fontLigatures": true,
+          "editor.fontWeight": "500",
+          // Basic formating
+          "editor.formatOnSave": true,
+          "files.trimFinalNewlines": true,
+          "files.trimTrailingWhitespace": true,
+          "files.insertFinalNewline": true,
+          "editor.tabSize": 2,
+          // Formatters
+          "editor.defaultFormatter": "esbenp.prettier-vscode",
+          "[javascript]": {
+            "editor.defaultFormatter": "esbenp.prettier-vscode"
+          },
+          "[svg]": {
+            "editor.defaultFormatter": "jock.svg"
+          },
+          // Search exclude
+          "search.exclude": {
+            "**/.next": true
+          },
+          // Add path autocomplete
+          "path-autocomplete.extensionOnImport": true,
+          "path-autocomplete.excludedItems": {
+            "**/*.ts": {
+              "when": "**"
+            },
+            "**/*.tsx": {
+              "when": "**"
+            },
+            "**/*.js": {
+              "when": "**"
+            },
+            "**/*.jsx": {
+              "when": "**"
+            },
+            "**": {
+              "when": "**",
+              "isDir": true
+            }
+          },
+          //
+          "workbench.colorTheme": "Default Dark+",
+          "files.autoSave": "off",
+          "files.associations": {
+            ".env.example": "dotenv",
+            "*.Dockefile": "dockerfile"
+          },
+          "git.autofetch": "all",
+          "git.useEditorAsCommitInput": false,
+          "task.autoDetect": "off",
+          "task.allowAutomaticTasks": "off",
+          "editor.multiCursorModifier": "ctrlCmd",
+          "terminal.integrated.defaultProfile.linux": "zsh",
+          "editor.codeActionsOnSave": {
+            "source.fixAll.eslint": true
+          },
+          "typescript.tsdk": "node_modules/typescript/lib",
+          "typescript.preferences.importModuleSpecifier": "non-relative",
+          "eslint.rules.customizations": [
+            {
+              "rule": "*",
+              "severity": "warn"
+            }
+          ]
+        },
+        "extensions": [
+          // javascript
+          "dbaeumer.vscode-eslint",
+          "esbenp.prettier-vscode",
+          "ms-vscode.vscode-typescript-next",
+          "bradlc.vscode-tailwindcss",
+          // utilities
+          "formulahendry.auto-rename-tag",
+          "tyriar.lorem-ipsum",
+          "jock.svg",
+          "ionutvmi.path-autocomplete",
+          "mikestead.dotenv",
+          "ms-azuretools.vscode-docker",
+          "mrmlnc.vscode-duplicate",
+          "sanaajani.taskrunnercode",
+          "eamodio.gitlens",
+          "neptunedesign.vs-sequential-number",
+          "naumovs.color-highlight"
+        ]
+      }
+    }
+  }
